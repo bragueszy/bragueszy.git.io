@@ -234,6 +234,37 @@
             color: var(--color-soft-peach);
         }
 
+        /* Estilos para o Container da Imagem do Projeto */
+        .work-image-container {
+    width: 100%;
+    height: 180px; /* Aumentado ligeiramente para dar mais destaque ao print */
+    margin-bottom: 15px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #0b0b0d; /* Fundo escuro idêntico ao footer para isolar o print */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;       /* Centra o print horizontalmente */
+    align-items: center; /* Centra o print verticalmente */
+    justify-content: center;
+}
+
+.work-image-container img {
+    width: 100%;
+    height: 100%;
+    /* 
+       'contain' garante que o print do teu projeto apareça 100% INTEIRO, 
+       ajustando-se na perfeição ao espaço sem nunca ser cortado ou deformado.
+    */
+    object-fit: contain; 
+    object-position: center;
+    padding: 8px; /* Pequena margem interna para o print não colar nas bordas do cartão */
+    transition: transform 0.3s ease;
+}
+
+        .work-card:hover .work-image-container img {
+            transform: scale(1.04);
+        }
+
         /* ESTRUTURA DA EDUCAÇÃO COM FOTO/LOGO */
         .edu-wrapper {
             display: flex;
@@ -243,32 +274,32 @@
         }
 
         .edu-logo-container {
-    flex-shrink: 0;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    overflow: hidden;
-    background-color: #16161a; /* Mesma cor de fundo do card */
-    
-    /* Cria a borda com gradiente usando as tuas variáveis */
-    border: 2px solid transparent;
-    background-image: linear-gradient(var(--bg-card), var(--bg-card)), 
-                      linear-gradient(45deg, var(--color-primary), var(--color-accent-3));
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 15px rgba(246, 44, 21, 0.15);
-}
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #16161a; /* Mesma cor de fundo do card */
+            
+            /* Cria a borda com gradiente usando as tuas variáveis */
+            border: 2px solid transparent;
+            background-image: linear-gradient(var(--bg-card), var(--bg-card)), 
+                              linear-gradient(45deg, var(--color-primary), var(--color-accent-3));
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(246, 44, 21, 0.15);
+        }
 
-.edu-logo-container img {
-    width: 85%;  /* Reduzido ligeiramente para dar o respiro/margem que se vê na imagem */
-    height: 85%;
-    object-fit: contain; /* Garante que o logo da UA não fique cortado ou deformado */
-    border-radius: 50%;
-}
+        .edu-logo-container img {
+            width: 85%;  /* Reduzido ligeiramente para dar o respiro/margem que se vê na imagem */
+            height: 85%;
+            object-fit: contain; /* Garante que o logo da UA não fique cortado ou deformado */
+            border-radius: 50%;
+        }
 
         .edu-logo-placeholder {
             font-size: 10px;
@@ -487,20 +518,20 @@
             </p>
         </div>
 
-      <div class="content-block">
-    <h2>Education</h2>
-    <div class="edu-wrapper">
-        <div class="edu-logo-container">
-            <img src="img/ualogo.png" alt="Universidade de Aveiro" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <div class="edu-logo-placeholder" style="display:none;">UA LOGO</div>
+        <div class="content-block">
+            <h2>Education</h2>
+            <div class="edu-wrapper">
+                <div class="edu-logo-container">
+                    <img src="img/ualogo.png" alt="Universidade de Aveiro" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="edu-logo-placeholder" style="display:none;">UA LOGO</div>
+                </div>
+                <div class="edu-timeline">
+                    <span class="year">2023 - Presente</span>
+                    <div class="degree">Licenciatura em Multimédia e Tecnologias da Comunicação</div>
+                    <div class="school">Universidade de Aveiro</div>
+                </div>
+            </div>
         </div>
-        <div class="edu-timeline">
-            <span class="year">2023 - Presente</span>
-            <div class="degree">Licenciatura em Multimédia e Tecnologias da Comunicação</div>
-            <div class="school">Universidade de Aveiro</div>
-        </div>
-    </div>
-</div>
 
         <div class="content-block">
             <h2>Technical Stack</h2>
@@ -519,35 +550,69 @@
             <h2>Work</h2>
             <div class="work-grid">
                 <div class="work-card">
+                    <div class="work-image-container">
+                        <img src="img/pausify.png" alt="Pausify" onerror="this.style.display='none';">
+                    </div>
                     <div>
-                        <h3>Projeto 01</h3>
-                        <p>Descrição do projeto desenvolvido.</p>
+                        <h3>Pausify</h3>
+                        <p>Pomodoro App</p>
+                    </div>
+                    <a href="https://bragueszy.github.io/pomodoro-app/" target="_blank" class="work-link">Ver Trabalho ↗</a>
+                </div>
+
+                <div class="work-card">
+                    <div class="work-image-container">
+                        <img src="img/ReShare.png" alt="Reshare" onerror="this.style.display='none';">
+                    </div>
+                    <div>
+                        <h3>Reshare</h3>
+                        <p>App do estilo vinted, para produtos recicláveis e feito de forma gratuita.</p>
+                    </div>
+                    <a href="https://www.figma.com/design/sk7BVX3wT9NRCBn4eftRWh/Projeto-de-Lab3?node-id=0-1&t=VsuahLbaWTJeqeOE-1" target="_blank" class="work-link">Ver Trabalho ↗</a>
+                </div>
+
+                <div class="work-card">
+                    <div class="work-image-container">
+                        <img src="img/coracao.png" alt="Coração Selvagem" onerror="this.style.display='none';">
+                    </div>
+                    <div>
+                        <h3>Coração Selvagem</h3>
+                        <p>Protótipo "Tracking app" para um projeto universitário</p>
+                    </div>
+                    <a href="https://www.figma.com/proto/aKWPIyuLBB5OwonSc1Tdla/Untitled?node-id=167-237&page-id=121%3A2&starting-point-node-id=167%3A3&t=PLW8UlXTOImtLkjI-1" target="_blank" class="work-link">Ver Trabalho ↗</a>
+                </div>
+
+                <div class="work-card">
+                    <div class="work-image-container">
+                        <img src="img/salvito.jpg" alt="Salvito o saltarico" onerror="this.style.display='none';">
+                    </div>
+                    <div>
+                        <h3>Salvito o saltarico</h3>
+                        <p>Site estático para promover um negócio de insufláveis</p>
                     </div>
                     <a href="https://github.com/" target="_blank" class="work-link">Ver Trabalho ↗</a>
                 </div>
 
                 <div class="work-card">
+                    <div class="work-image-container">
+                        <img src="img/wonka.webp" alt="Willy Wonka" onerror="this.style.display='none';">
+                    </div>
                     <div>
-                        <h3>Projeto 02</h3>
-                        <p>Descrição do projeto desenvolvido.</p>
+                        <h3>Willy Wonka</h3>
+                        <p>Projeto desenvolvido no contexto da disciplina de Lab2</p>
                     </div>
                     <a href="https://github.com/" target="_blank" class="work-link">Ver Trabalho ↗</a>
                 </div>
 
                 <div class="work-card">
-                    <div>
-                        <h3>Projeto 03</h3>
-                        <p>Descrição do projeto desenvolvido.</p>
+                    <div class="work-image-container">
+                        <img src="img/lousa.jpg" alt="LousaHandMade" onerror="this.style.display='none';">
                     </div>
-                    <a href="https://github.com/" target="_blank" class="work-link">Ver Trabalho↗</a>
-                </div>
-
-                <div class="work-card">
                     <div>
-                        <h3>Projeto 04</h3>
-                        <p>Descrição do projeto desenvolvido.</p>
+                        <h3>LousaHandMade</h3>
+                        <p>Webapp para a promoção dos artesãos da Lousã</p>
                     </div>
-                    <a href="https://github.com/" target="_blank" class="work-link">Ver Trabalho ↗</a>
+                    <a href="https://github.com/Tiagos121/Lousa_HandMade" target="_blank" class="work-link">Ver Trabalho ↗</a>
                 </div>
             </div>
         </div>
@@ -582,7 +647,6 @@
         
         <div class="footer-bottom">
             <div>&copy; 2026 Diogo Braguês | Made with HTML, CSS , JS</div>
-            
         </div>
     </footer>
 
