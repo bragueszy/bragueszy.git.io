@@ -459,32 +459,86 @@
         }
 
         @media (max-width: 768px) {
-            .work-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+    .work-grid {
+        grid-template-columns: 1fr; /* Passa os projetos para 1 coluna */
+        gap: 25px;
+    }
+    
+    main {
+        padding: 120px 20px 40px 20px; /* Reduz margens do topo e fundo */
+    }
+}
 
-        @media (max-width: 630px) {
-            .profile-hero, .edu-wrapper {
-                flex-direction: column;
-                text-align: center;
-                gap: 25px;
-            }
-            .footer-container {
-                flex-direction: column;
-                gap: 30px;
-            }
-            .footer-nav {
-                gap: 40px;
-            }
-            .nav-container {
-                justify-content: center; /* Volta a centrar em ecrãs pequenos para não quebrar o layout */
-            }
-            .nav-links a {
-                margin: 0 12px;
-                font-size: 13px;
-            }
-        }
+/* Smartphones e ecrãs pequenos (Correção da Navbar e Elementos) */
+@media (max-width: 630px) {
+    /* Corrige a Navbar para não quebrar nem sobrepor */
+    .nav-container {
+        justify-content: center; /* Centra a barra em mobile */
+        padding: 15px 10px;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px; /* Controla o espaço entre links sem margens fixas gigantes */
+        width: 100%;
+        flex-wrap: wrap; /* Se o ecrã for mini, os links passam para baixo em vez de fugir do ecrã */
+    }
+
+    .nav-links a {
+        margin-left: 0; /* Remove o margin-left fixo que estragava o alinhamento */
+        font-size: 12px;
+        padding: 6px 10px;
+        letter-spacing: 0px;
+    }
+
+    /* Ajustes de espaçamento do conteúdo principal */
+    main {
+        padding: 110px 15px 40px 15px; /* Dá mais espaço lateral para aproveitar o ecrã */
+    }
+
+    .content-block {
+        padding: 25px 20px; /* Reduz o padding interno dos blocos para o texto não ficar "esmagado" */
+        margin-bottom: 25px;
+    }
+
+    /* Transforma o Hero, Educação e Footer em Colunas bem alinhadas */
+    .profile-hero, .edu-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .hero-intro h1 {
+        font-size: 30px; /* Diminui o título para não quebrar linhas de forma feia */
+    }
+
+    .edu-logo-container {
+        width: 75px;
+        height: 75px;
+    }
+
+    /* Footer Responsivo */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+    .footer-nav {
+        flex-direction: column; /* Coloca as colunas de links umas por baixo das outras */
+        gap: 30px;
+        align-items: center;
+    }
+    
+    .footer-links a:hover {
+        padding-left: 0; /* Remove o efeito de empurrar para o lado no mobile */
+    }
+}
     </style>
 </head>
 <body>
